@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+</head>
+<body>
+  <h1>Simple Calculator</h1>
+  <form id="calculator">
+    <input type="number" id="num1" placeholder="Enter first number" required>
+    <select id="operator" required>
+      <option value="">Select an operator</option>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="number" id="num2" placeholder="Enter second number" required>
+    <button type="submit">Calculate</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+        function add(num1, num2) {
+        return num1 + num2;
+        }
+
+        function subtract(num1, num2) {
+        return num1 - num2;
+        }
+
+        function multiply(num1, num2) {
+        return num1 * num2;
+        }
+
+        function divide(num1, num2) {
+        return num1 / num2;
+        }
+        document.getElementById("calculator").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  var num1 = parseFloat(document.getElementById("num1").value);
+  var num2 = parseFloat(document.getElementById("num2").value);
+  var operator = document.getElementById("operator").value;
+  var resultElement = document.getElementById("result");
+  
+  var result;
+  if (operator === "+") {
+    result = add(num1, num2);
+  } else if (operator === "-") {
+    result = subtract(num1, num2);
+  } else if (operator === "*") {
+    result = multiply(num1, num2);
+  } else if (operator === "/") {
+    result = divide(num1, num2);
+  }
+  
+  resultElement.innerHTML = "Result: " + result;
+});
+  </script>
+</body>
+</html>
