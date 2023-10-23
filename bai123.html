@@ -1,0 +1,32 @@
+<!-- 1 -->
+<button type="button" onclick="showMessage();">Click Me!</button>
+<script>
+ function showMessage(){
+     alert('Xin chào!');
+ }
+</script>
+
+<!-- 2 -->
+<div id="messageDiv"></div>
+<button type="button" onclick="showMessage();">Click Me!</button>
+<script>
+ function showMessage(){
+     document.getElementById('messageDiv').innerHTML = 'Xin chào!';
+ }
+</script>
+
+<!-- 3 -->
+<button type="button" onclick="showMessage();">Click Me!</button>
+<script>
+ function showMessage(){
+     document.write('Xin chào!');
+ }
+</script>
+
+<!-- 4 -->
+<button type="button" onclick="showMessage();">Click Me!</button>
+<script>
+ function showMessage(){
+     console.log('Xin chào!');
+ }
+</script>
