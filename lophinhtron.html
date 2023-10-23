@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Example</title>
+</head>
+<body>
+    <script>
+        class Circle {
+            constructor(radius, color) {
+                this.radius = radius;
+                this.color = color;
+            }
+
+            getRadius() {
+                return this.radius;
+            }
+
+            getArea() {
+                return Math.PI * this.radius * this.radius;
+            }
+        }
+
+        // Tạo đối tượng hình tròn với bán kính là 2
+        let circle1 = new Circle(2);
+
+        let radius1 = circle1.getRadius();
+        let area1 = circle1.getArea();
+
+        // Hiển thị bán kính và diện tích đối tượng hình tròn thứ nhất
+        console.log("Đối tượng 1 - Bán kính: " + radius1 + "; Diện tích: " + area1);
+
+        // Tạo đối tượng hình tròn khác với bán kính khác nhau
+        let circle2 = new Circle(3);
+
+        let radius2 = circle2.getRadius();
+        let area2 = circle2.getArea();
+
+        // Hiển thị bán kính và diện tích đối tượng hình tròn thứ hai
+        console.log("Đối tượng 2 - Bán kính: " + radius2 + "; Diện tích: " + area2);
+    </script>
+</body>
+</html>
