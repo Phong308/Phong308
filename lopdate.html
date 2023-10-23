@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyDate Example</title>
+</head>
+<body>
+  <div>
+    <label>Ngày:</label>
+    <input type="number" id="dayInput">
+  </div>
+  <div>
+    <label>Tháng:</label>
+    <input type="number" id="monthInput">
+  </div>
+  <div>
+    <label>Năm:</label>
+    <input type="number" id="yearInput">
+  </div>
+  <button onclick="createMyDate()">Tạo MyDate</button>
+  <button onclick="displayMyDate()">Hiển thị MyDate</button>
+  <p id="myDateDisplay"></p>
+
+  <script>
+    class MyDate {
+      constructor(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+      }
+
+      getDay() {
+        return this.day;
+      }
+
+      getMonth() {
+        return this.month;
+      }
+
+      getYear() {
+        return this.year;
+      }
+
+      setDay(day) {
+        this.day = day;
+      }
+
+      setMonth(month) {
+        this.month = month;
+      }
+
+      setYear(year) {
+        this.year = year;
+      }
+
+      setDate(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+      }
+
+      toString() {
+        return this.day + '/' + this.month + '/' + this.year;
+      }
+    }
+
+    let myDate = null;
+
+    function createMyDate() {
+      const day = parseInt(document.getElementById('dayInput').value);
+      const month = parseInt(document.getElementById('monthInput').value);
+      const year = parseInt(document.getElementById('yearInput').value);
+
+      myDate = new MyDate(day, month, year);
+    }
+
+    function displayMyDate() {
+      if (myDate) {
+        document.getElementById('myDateDisplay').innerText = myDate.toString();
+      } else {
+        alert('Vui lòng tạo MyDate trước.');
+      }
+    }
+  </script>
+</body>
+</html>
